@@ -27,7 +27,9 @@ json2dir(
 	)
 );
 
-child_process.exec(CMD, { cwd }).on('exit', () => app.close());
+child_process
+	.spawn(CMD, { cwd, stdio: [process.stdin, process.stdout, process.stderr] })
+	.on('exit', () => app.close());
 
 const tail = (res: Response, file: string) => {
 		const t = new Tail(file);
