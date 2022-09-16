@@ -7,7 +7,7 @@ import { Tail } from 'tail';
 
 const CLUSTER = '/root/.klei/DoNotStarveTogether/Cluster_1';
 const cwd = '/home/steam/steamapps/DST/bin64';
-const DST = `./dontstarve_dedicated_server_nullrenderer_x64 -cluster Cluster_1`;
+const DST = `${cwd}/dontstarve_dedicated_server_nullrenderer_x64 -cluster Cluster_1`;
 const CMD = `${DST} -only_update_server_mods && (${DST} -shard Master & ${DST} -shard Caves)`;
 
 json2dir(
@@ -26,10 +26,9 @@ json2dir(
 		Buffer.from(process.env.JSON2DIR ?? 'e30=', 'base64').toString('utf8')
 	)
 );
-
-child_process
-	.spawn(CMD, { cwd, stdio: [process.stdin, process.stdout, process.stderr] })
-	.on('exit', () => app.close());
+const proc = child_process.exec(CMD, { cwd }).on('exit', () => app.close());
+proc.stdout?.pipe(process.stdout);
+proc.stderr?.pipe(process.stderr);
 
 const tail = (res: Response, file: string) => {
 		const t = new Tail(file);
@@ -46,4 +45,4 @@ const tail = (res: Response, file: string) => {
 		.get('/d/caves', (_, r) => r.download(`${CLUSTER}/Caves/server_log.txt`))
 		.get('/chat', (_, r) => tail(r, `${CLUSTER}/Master/chat_log.txt`))
 		.get('/d/chat', (_, r) => r.download(`${CLUSTER}/Master/chat_log.txt`))
-		.listen(8080);
+		.listen(8080, () => console.log('Listening at port 8080'));
