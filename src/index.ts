@@ -7,7 +7,7 @@ import { Tail } from 'tail';
 
 const CLUSTER = '/root/.klei/DoNotStarveTogether/Cluster_1';
 const cwd = '/home/steam/steamapps/DST/bin64';
-const DST = `${cwd}/dontstarve_dedicated_server_nullrenderer_x64 -cluster Cluster_1`;
+const DST = `${cwd}/dontstarve_dedicated_server_nullrenderer_x64 -cluster Cluster_1 -persistent_storage_root /root/.klei`;
 const CMD = `${DST} -only_update_server_mods && (${DST} -shard Master & ${DST} -shard Caves)`;
 
 json2dir(
