@@ -16,10 +16,10 @@ sudo apt-get install -y \
     libcurl4-gnutls-dev:i386 \
     nodejs
 
-wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
+wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz -P $HOME
 mkdir -p $HOME/steamcmd
-tar -xvzf steamcmd_linux.tar.gz -C $HOME/steamcmd
-rm steamcmd_linux.tar.gz
+tar -xvzf $HOME/steamcmd_linux.tar.gz -C $HOME/steamcmd
+rm $HOME/steamcmd_linux.tar.gz
 
 # ./steamcmd.sh \
 #     +login anonymous
