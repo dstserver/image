@@ -37,12 +37,14 @@ const tail = (res: Response, file: string) => {
 	},
 	auth = (req: Request) => req.header('X-API-KEY') === process.env.API_KEY,
 	app = express()
-		.get('/health', (_, r) => r.send('OK'))
 		.use((req, res, next) => (auth(req) ? next() : res.sendStatus(401)))
+		.get('/health', (_, r) => r.send('OK'))
 		.get('/master', (_, r) => tail(r, `${CLUSTER}/Master/server_log.txt`))
 		.get('/d/master', (_, r) => r.download(`${CLUSTER}/Master/server_log.txt`))
 		.get('/caves', (_, r) => tail(r, `${CLUSTER}/Caves/server_log.txt`))
 		.get('/d/caves', (_, r) => r.download(`${CLUSTER}/Caves/server_log.txt`))
-		.get('/chat', (_, r) => tail(r, `${CLUSTER}/Master/chat_log.txt`))
-		.get('/d/chat', (_, r) => r.download(`${CLUSTER}/Master/chat_log.txt`))
+		.get('/chat', (_, r) => tail(r, `${CLUSTER}/Master/server_chat_log.txt`))
+		.get('/d/chat', (_, r) =>
+			r.download(`${CLUSTER}/Master/server_chat_log.txt`)
+		)
 		.listen(8080, () => console.log('Listening at port 8080'));
