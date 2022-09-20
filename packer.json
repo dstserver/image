@@ -3,18 +3,15 @@
     {
       "type": "googlecompute",
       "project_id": "dstservercloud",
-      "source_image_family": "ubuntu-2204-lts",
+      "source_image": "debian-7-wheezy-v20150127",
       "zone": "us-central1-a",
-      "ssh_username": "packer",
-      "metadata": {
-        "enable-oslogin": "false"
-      }
+      "ssh_username": "packer"
     }
   ],
   "provisioners": [
     {
       "type": "shell",
-      "script": "./setup.sh"
+      "inline": ["echo Hi"]
     }
   ]
 }
