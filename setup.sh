@@ -23,8 +23,8 @@ mkdir -p $HOME/steamcmd
 tar -xvzf steamcmd_linux.tar.gz -C $HOME/steamcmd
 rm steamcmd_linux.tar.gz
 
-# ./steamcmd.sh \
-#     +login anonymous
-#     +force_install_dir /home/chientrm/steamapps/DST
-#     +app_update 343050 validate
-#     +quit
+$HOME/steamcmd/steamcmd.sh\
+    +force_install_dir $HOME/dst\
+    +login anonymous\
+    +app_update 343050 validate\
+    +quit
