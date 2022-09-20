@@ -8,8 +8,8 @@
            "ssh_username": "root",
            "image_name": "dst-image-5",
            "image_storage_locations": ["us-central1"],
-           "network": "packer-vpc",
-           "subnetwork": "packer-vpc"
+           "network": "default",
+           "subnetwork": "default"
        }
    ],
    "provisioners": [
