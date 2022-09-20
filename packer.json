@@ -14,6 +14,11 @@
     {
       "type": "shell",
       "script": "setup.sh"
+    },
+    {
+      "type": "file",
+      "source": "index.js",
+      "destination": "/home/packer/server.js"
     }
   ]
 }
