@@ -3,9 +3,9 @@
     {
       "type": "googlecompute",
       "project_id": "dstservercloud",
-      "source_image": "rhel-7-v20180522",
+      "source_image_family": "debian-11",
       "zone": "us-central1-a",
-      "ssh_username": "rhel",
+      "ssh_username": "debian",
       "metadata": { "enable-oslogin": "false" }
     }
   ],
