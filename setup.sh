@@ -1,15 +1,15 @@
 #!/bin/bash
 
 export DEBIAN_FRONTEND=noninteractive
-dpkg --add-architecture i386
+sudo dpkg --add-architecture i386
 
 curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 
-apt-get update
-apt-get upgrade -y
-apt-get autoremove -f -y
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get autoremove -f -y
 
-apt-get install -y \
+sudo apt-get install -y \
     lib32gcc-s1 \
     lib32stdc++6 \
     libcurl3-gnutls \
@@ -17,8 +17,9 @@ apt-get install -y \
     nodejs
 
 wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
-mkdir -p ../steamcmd
-tar -xvzf steamcmd_linux.tar.gz -C ../steamcmd
+mkdir -p $HOME/steamcmd
+tar -xvzf steamcmd_linux.tar.gz -C $HOME/steamcmd
+rm steamcmd_linux.tar.gz
 
 # ./steamcmd.sh \
 #     +login anonymous
