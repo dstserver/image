@@ -5,6 +5,7 @@
       "project_id": "dstservercloud",
       "zone": "us-central1-a",
       "ssh_username": "packer",
+      "disk_size": 10,
       "source_image_family": "debian-11",
       "image_family": "dst-image"
     }
@@ -12,7 +13,7 @@
   "provisioners": [
     {
       "type": "shell",
-      "inline": ["echo Hi"]
+      "script": "setup.sh"
     }
   ]
 }
