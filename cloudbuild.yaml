@@ -1,13 +1,13 @@
 steps:
-- name: 'gcr.io/[PROJECT_ID]/packer'
+- name: 'gcr.io/dstservercloud/packer'
   args:
   - build
   - -var
-  - image_name=[IMAGE_NAME]
+  - image_name=dst-5
   - -var
-  - project_id=[PROJECT_ID]
+  - project_id=dstservercloud
   - -var
-  - image_family=[IMAGE_FAMILY]
+  - image_family=dst
   - -var
-  - image_zone=[IMAGE_ZONE]
+  - image_zone=asia-southeast1-c
   - packer.json
