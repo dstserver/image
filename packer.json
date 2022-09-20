@@ -1,2 +1,21 @@
 {
+   "builders": [
+       {
+           "type": "googlecompute",
+           "project_id": "dstservercloud",
+           "source_image_family": "ubuntu-2204-lts",
+           "zone": "us-central1-a",
+           "ssh_username": "root",
+           "image_name": "dst-image-5",
+           "image_storage_locations": ["us-central1"],
+           "network": "packer-vpc",
+           "subnetwork": "packer-vpc",
+       }
+   ],
+   "provisioners": [
+       {
+           "type": "shell",
+           "script": "setup.sh"
+       }
+   ]
 }
