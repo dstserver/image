@@ -2,7 +2,11 @@
   "builders": [
     {
       "type": "googlecompute",
-      "source_image_family": "debian-11"
+      "project_id": "dstservercloud",
+      "zone": "us-central1-a",
+      "ssh_username": "packer",
+      "source_image_family": "debian-11",
+      "image_family": "dst-image"
     }
   ],
   "provisioners": [
