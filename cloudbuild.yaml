@@ -1,6 +1,5 @@
 steps:
 - name: 'gcr.io/dstservercloud/packer'
-  options.logging: CLOUD_LOGGING_ONLY
   args:
   - build
   - -var
@@ -12,3 +11,5 @@ steps:
   - -var
   - image_zone=us-central1-a
   - packer.json
+options:
+  logging: CLOUD_LOGGING_ONLY
