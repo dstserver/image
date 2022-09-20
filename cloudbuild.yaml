@@ -3,11 +3,11 @@ steps:
   args:
   - build
   - -var
-  - image_name=dst-6
+  - image_name=dst-7
   - -var
   - project_id=dstservercloud
   - -var
   - image_family=dst-image
   - -var
-  - image_zone=asia-southeast1-c
+  - image_zone=us-central1-a
   - packer.json
