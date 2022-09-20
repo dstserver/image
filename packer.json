@@ -3,7 +3,7 @@
     {
       "type": "googlecompute",
       "project_id": "dstservercloud",
-      "source_image": "ubuntu-2204-lts",
+      "source_image_family": "ubuntu-2204-lts",
       "zone": "us-central1-a",
       "ssh_username": "packer"
     }
