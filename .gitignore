@@ -2,3 +2,6 @@ node_modules
 *.js
 *.js.map
 *.deb
+*.tar.gz
+steamcmd.sh
+steamcmd
