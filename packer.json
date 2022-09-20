@@ -5,7 +5,8 @@
       "project_id": "dstservercloud",
       "source_image_family": "ubuntu-2204-lts",
       "zone": "us-central1-a",
-      "ssh_username": "packer"
+      "ssh_username": "packer",
+      "metadata": { "enable-oslogin": "false" }
     }
   ],
   "provisioners": [
