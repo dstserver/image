@@ -15,11 +15,6 @@
     {
       "type": "shell",
       "script": "configure"
-    },
-    {
-      "type": "file",
-      "source": "index.js",
-      "destination": "/home/packer/server.js"
     }
   ]
 }
