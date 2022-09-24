@@ -3,7 +3,7 @@
 export DEBIAN_FRONTEND=noninteractive
 sudo dpkg --add-architecture i386
 
-curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo bash -
 
 sudo apt-get update
 sudo apt-get install -y \
